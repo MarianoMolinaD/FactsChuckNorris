@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main"
+    tools:context=".ui.MainActivity">
+
+    <ProgressBar
+        android:id="@+id/pbFacts"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:indeterminateTint="@color/color_pb"
+        android:progressBackgroundTint="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"/>
+
+    <ImageView
+        android:id="@+id/ivChuck"
+        android:layout_margin="25dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/chuck"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <LinearLayout
+        android:id="@+id/llContainerCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/ivChuck"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Category"
+            android:textSize="16sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="12dp">
+
+            <Spinner
+                android:id="@+id/sCategory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:touchscreenBlocksFocus="true"
+
+                />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFacts"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnStart"
+        app:layout_constraintTop_toBottomOf="@+id/llContainerCategory">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_container_fats"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvFacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingHorizontal="16dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                tools:text="Facts" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnStart"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_button"
+        android:text="Start"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvFacts" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
