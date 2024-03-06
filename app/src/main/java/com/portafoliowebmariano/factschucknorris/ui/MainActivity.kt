@@ -95,6 +95,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnStart.setOnClickListener {
             jokesViewModel.getRandomJoke(itemSelectedSearch)
         }
+        binding.btnInformation.setOnClickListener {
+            jokesViewModel.showDialogInfo(this)
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.M)

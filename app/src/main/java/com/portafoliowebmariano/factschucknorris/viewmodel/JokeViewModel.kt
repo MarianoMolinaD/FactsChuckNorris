@@ -1,6 +1,7 @@
 package com.portafoliowebmariano.factschucknorris.viewmodel
 
 import android.annotation.SuppressLint
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,6 +9,7 @@ import com.portafoliowebmariano.factschucknorris.data.model.JokesCategoryData
 import com.portafoliowebmariano.factschucknorris.data.model.JokesRandomData
 import com.portafoliowebmariano.factschucknorris.domain.GetCategoryJokeUseCase
 import com.portafoliowebmariano.factschucknorris.domain.GetRandomJokesUseCase
+import com.portafoliowebmariano.factschucknorris.ui.dialog.DialogShowInformation.showDialogInformation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -37,5 +39,9 @@ class JokeViewModel @Inject constructor(
             val result = getCategoryJokeUseCase()
             category.postValue(result)
         }
+    }
+
+    fun showDialogInfo (context: Context){
+        showDialogInformation(context)
     }
 }

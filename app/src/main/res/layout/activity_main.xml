@@ -7,6 +7,17 @@
     android:background="@drawable/background_main"
     tools:context=".ui.MainActivity">
 
+    <ImageView
+        android:id="@+id/btnInformation"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/infoic"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="15dp"
+        android:background="?selectableItemBackgroundBorderless"/>
+
     <ProgressBar
         android:id="@+id/pbFacts"
         android:layout_width="200dp"
